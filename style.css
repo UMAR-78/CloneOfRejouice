@@ -1,0 +1,253 @@
+@font-face {
+  font-family: nb;
+  src: url(./NBInternationalProBoo.ttf);
+}
+
+@font-face {
+  font-family: rejoy;
+  src: url(./Rejouice-Headline.ttf);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "nb";
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+#page1 {
+  height: 100vh;
+  width: 100%;
+  /* background-color: red; */
+  position: relative;
+}
+#page1 > video {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  position: absolute;
+}
+
+#cursor {
+  width: 100px;
+  height: 100px;
+  background-color: #ff5f38;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  z-index: 9;
+  transform: translate(-50%, -50%);
+}
+#cursor h5 {
+  font-weight: 400;
+}
+
+#TakeOnecursor {
+  width: 90px;
+  height: 90px;
+  background-color: black;
+  color: white;
+  border-radius: 45%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  /* z-index: 9;/ */
+  transform: translate(-50%, -50%);/
+}
+#TakeOnecursor h5 {
+  font-weight: 400;
+}
+
+#page1-content {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  z-index: 10;
+  /* background-color: darkblue; */
+}
+#page1-content nav {
+  height: 100px;
+  padding: 20px 35px;
+  width: 100%;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+nav h3 {
+  font-size: 17px;
+  font-weight: 100;
+}
+#page1-content h1 {
+  font-size: 350px;
+  line-height: 20vw;
+  font-weight: 100;
+  color: white;
+}
+#page1-content h1 span {
+  font-family: rejoy;
+}
+
+/* ----------------------------------------------Page 2---------------------------- */
+#page2,#page4 {
+  height: 100%;
+  width: 100%;
+  background-color: #faf8f3;
+  padding: 80px 35px;
+}
+#page2-upperContent, #page4-upperContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 20px;
+}
+#page2-upperContent h3 , #page4-upperContent h3 {
+  font-weight: 100;
+  /* line-height: 2; */
+  font-size: 20px;
+}
+#verticalLine {
+  height: 1px;
+  width: 95%;
+  border: 1px solid rgba(0, 0, 0, 0.263);
+  position: absolute;
+}
+#page2-bottomContent h1, #page4-bottomContent h1 {
+  margin-top: 20px;
+  font-size: 45px;
+  font-weight: 100;
+}
+
+/* ------------------------------------------Page no 03---------------------- */
+
+#page3 {
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+  padding: 5vw;
+  background-color: #faf8f3;
+}
+#page3-topContent {
+  text-align: center;
+  /* position: absolute; */
+  margin-bottom: 10vw;
+
+}
+
+#page3-topContent h4 {
+  margin-top: 50px;
+  font-weight: 100;
+  padding-bottom: 20px;
+}
+#page3-topContent h4 span {
+  font-size: 9px;
+  background-color: black;
+  color: white;
+  padding: 5px 8px;
+  border-radius: 20px;
+}
+#page3-topContent h1 {
+  font-weight: 100;
+  font-size: 60px;
+}
+#page3-content {
+  height: 80vh;
+  width: 100%;
+  /* background-color: #ff5f38; */
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  
+}
+.boxTopContent{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 20px;
+}
+.boxTopContent h3{
+  font-weight: 100;
+}
+.mainBoxDiv{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+#page3-content #box {
+  height: 100%;
+  width: 33%;
+  position: relative;
+}
+
+#page3-content #box video {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+  /* position: relative; */
+}
+#page3-content #box img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+  position: absolute;
+  transition: all linear 0.5s;
+}
+
+
+#page3-content #box:hover img {
+    opacity: 0;
+}
+
+
+/* page 5 */
+#page5{
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background-color: #faf8f3;
+}
+#page5>video{
+  height: 100%;
+}
+#page5 svg{
+  position: absolute;
+  height: 65%;
+}
+
+#TakeOnecursor {
+  width: 90px;
+  height: 90px;
+  background-color: black;
+  color: white;
+  border-radius: 45%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  transform: translate(-50%, -50%);
+}
+#TakeOnecursor h5 {
+  font-weight: 400;
+}
