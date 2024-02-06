@@ -1,14 +1,11 @@
 initLocoScroll();
 initCursorMovement();
-animatePage2UpperContent();
-animatePage2BottomContent();
-animateVerticalLine();
-
-animatePage4UpperContent();
-animatePage4BottomContent();
-animateVerticalLineforPage4();
-animatePage3Content();
-
+initCursorMovement2();
+animatePage2();
+animatePage4();
+animatePage6();
+loaderAnimation();
+footeranimation();
 // ----------------------------Locomotive SCROLL---------------------------------------------
 
 function initLocoScroll() {
@@ -41,19 +38,15 @@ function initLocoScroll() {
   });
 
   ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
-
   ScrollTrigger.refresh();
 }
 
-// ----------------------------Curson Movement---------------------------------------------
+// ----------------------------Cursor Movement---------------------------------------------
 
 function initCursorMovement() {
   var page1Content = document.querySelector("#page1-content");
   var cursor = document.querySelector("#cursor");
-  
-  var page5Content = document.querySelector("#page5");
-  var cursor2 = document.querySelector("#TakeOnecursor");
-  
+
   page1Content.addEventListener("mousemove", function (value1) {
     gsap.to(cursor, {
       x: value1.x,
@@ -61,26 +54,30 @@ function initCursorMovement() {
     });
   });
 
-  page1Content.addEventListener("mouseenter", function (value) {
+  page1Content.addEventListener("mouseenter", function () {
     gsap.to(cursor, {
       scale: 1,
       opacity: 1,
     });
   });
 
-  page1Content.addEventListener("mouseleave", function (value) {
+  page1Content.addEventListener("mouseleave", function () {
     gsap.to(cursor, {
       scale: 0,
       opacity: 0,
     });
   });
+}
 
-// black curson content
+function initCursorMovement2() {
+  var page5Content = document.querySelector("#page5");
+  var cursor2 = document.querySelector("#TakeOnecursor");
+  // black cursor content
   page5Content.addEventListener("mousemove", function (value1) {
-    gsap.to(cursor2,{
-      x:value1.x,
-      y:value1.y
-    })
+    gsap.to(cursor2, {
+      x: value1.x,
+      y: value1.y,
+    });
   });
 
   page5Content.addEventListener("mouseenter", function () {
@@ -98,9 +95,9 @@ function initCursorMovement() {
   });
 }
 
-// ----------------------------Page 2 Animtaion---------------------------------------------
+// ----------------------------Page Animations---------------------------------------------
 
-function animatePage2UpperContent() {
+function animatePage2() {
   gsap.from("#page2-upperContent h3", {
     y: 120,
     duration: 1,
@@ -112,13 +109,10 @@ function animatePage2UpperContent() {
       scroller: "#main",
       start: "top 47%",
       end: "top 46%",
-      //   markers: true,
       scrub: 2,
     },
   });
-}
 
-function animatePage2BottomContent() {
   gsap.from("#page2-bottomContent h1", {
     y: 120,
     duration: 2,
@@ -128,13 +122,10 @@ function animatePage2BottomContent() {
     scrollTrigger: {
       trigger: "#page2",
       scroller: "#main",
-      //   markers: true,
       scrub: 2,
     },
   });
-}
 
-function animateVerticalLine() {
   gsap.from("#verticalLine", {
     duration: 2,
     delay: 2.5,
@@ -145,16 +136,12 @@ function animateVerticalLine() {
       scroller: "#main",
       start: "top 47%",
       end: "top 46%",
-      //   markers: true,
       scrub: 2,
     },
   });
 }
 
-// Page 4 animations
-// ----------------------------Page 2 Animtaion---------------------------------------------
-
-function animatePage4UpperContent() {
+function animatePage4() {
   gsap.from("#page4-upperContent h3", {
     y: 120,
     duration: 1,
@@ -166,13 +153,10 @@ function animatePage4UpperContent() {
       scroller: "#main",
       start: "top 47%",
       end: "top 46%",
-      //   markers: true,
       scrub: 2,
     },
   });
-}
 
-function animatePage4BottomContent() {
   gsap.from("#page4-bottomContent h1", {
     y: 120,
     duration: 2,
@@ -182,7 +166,102 @@ function animatePage4BottomContent() {
     scrollTrigger: {
       trigger: "#page4",
       scroller: "#main",
-      //   markers: true,
+      scrub: 2,
+    },
+  });
+}
+
+function animatePage6() {
+  gsap.from("#page6-upperContent h3", {
+    y: 120,
+    duration: 1,
+    delay: 1.5,
+    opacity: 0,
+    stagger: 0.2,
+    scrollTrigger: {
+      trigger: "#page6",
+      scroller: "#main",
+      start: "top 47%",
+      end: "top 46%",
+      scrub: 2,
+    },
+  });
+
+  gsap.from("#page6-bottomContent h1", {
+    y: 120,
+    duration: 2,
+    delay: 2.5,
+    opacity: 0,
+    stagger: 0.2,
+    scrollTrigger: {
+      trigger: "#page6",
+      scroller: "#main",
+      scrub: 2,
+    },
+  });
+}
+
+function loaderAnimation() {
+  var tl = gsap.timeline();
+  tl.from(".loader h3", {
+    x: 120,
+    duration: 1,
+    delay: 0.5,
+    opacity: 0,
+    stagger: 0.2,
+  });
+  tl.to(".loader h3", {
+    x: -40,
+    duration: 1,
+    delay: 0.5,
+    opacity: 0,
+    stagger: 0.2,
+  });
+  tl.to(".loader", {
+    // opacity: 0,
+    display: "none",
+  });
+  tl.from("#page1-content h1 span", {
+    y: -100,
+    opacity: 0,
+    duration: 0.5,
+    delay: -0.5,
+    stagger: 0.1,
+  });
+  tl.to(".loader", {
+    // opacity: 0,
+    display: "none",
+  });
+}
+
+function footeranimation() {
+  var tl = gsap.timeline();
+  tl.to(".page8topdiv ,.page8centerdiv", {
+    y: 50,
+    duration: 1,
+    delay: 1.5,
+    stagger: 0.2,
+    scrollTrigger: {
+      trigger: "#page8",
+      scroller: "#main",
+      start: "top 17%",
+      end: "top 16%",
+      markers: true,
+      scrub: 2,
+    },
+  });
+  tl.from(".page8bottomdiv h1 span", {
+    y: -100,
+    opacity: 0,
+    duration: 0.5,
+    // delay: -0.5,
+    stagger: 0.1,
+    scrollTrigger: {
+      trigger: "#page8",
+      scroller: "#main",
+      start: "top 17%",
+      end: "top 16%",
+      markers: true,
       scrub: 2,
     },
   });
