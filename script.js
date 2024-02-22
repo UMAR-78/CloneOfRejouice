@@ -246,7 +246,6 @@ function footeranimation() {
       scroller: "#main",
       start: "top 17%",
       end: "top 16%",
-      markers: true,
       scrub: 2,
     },
   });
@@ -261,7 +260,6 @@ function footeranimation() {
       scroller: "#main",
       start: "top 17%",
       end: "top 16%",
-      markers: true,
       scrub: 2,
     },
   });
